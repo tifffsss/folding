@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.origami {
+  margin: auto;
+  overflow: hidden;
+  width: 808px;
+}
+.origami .sheet {
+  border: 1px solid white;
+  float: left;
+  height: 150px;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  /* topleftfolding */
+  /* toprightfolding */
+  /* bottomrightfolding */
+  /* bottomleftfolding */
+  /* leftfolding */
+  /* rightfolding */
+  /* topfolding */
+  /* bottomfolding */
+}
+.origami .sheet img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /* opacity:0;*/
+}
+.origami .sheet .mask {
+  border: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+.origami .sheet .clone {
+  background: black;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.origami .sheet .clone img {
+  width: 100%;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.origami .sheet .clone-limite {
+  position: absolute;
+  overflow: hidden;
+}
+.origami .sheet .clone-rotate {
+  position: absolute;
+}
+.origami .sheet.topfolding:hover .clone, .origami .sheet.bottomfolding:hover .clone, .origami .sheet.rightfolding:hover .clone, .origami .sheet.leftfolding:hover .clone, .origami .sheet.toprightfolding:hover .clone, .origami .sheet.topleftfolding:hover .clone, .origami .sheet.bottomrightfolding:hover .clone, .origami .sheet.bottomleftfolding:hover .clone {
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-transform: rotate3d(0, 0, 0, 0deg) !important;
+  -ms-transform: rotate3d(0, 0, 0, 0deg) !important;
+  transform: rotate3d(0, 0, 0, 0deg) !important;
+}
+.origami .sheet.topfolding:hover .clone img, .origami .sheet.bottomfolding:hover .clone img, .origami .sheet.rightfolding:hover .clone img, .origami .sheet.leftfolding:hover .clone img, .origami .sheet.toprightfolding:hover .clone img, .origami .sheet.topleftfolding:hover .clone img, .origami .sheet.bottomrightfolding:hover .clone img, .origami .sheet.bottomleftfolding:hover .clone img {
+  opacity: 1;
+}
+.origami .sheet.topleftfolding .mask {
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid white;
+}
+.origami .sheet.topleftfolding .clone-limite {
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+.origami .sheet.topleftfolding .clone-rotate {
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+.origami .sheet.toprightfolding .mask {
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid white;
+}
+.origami .sheet.toprightfolding .clone-limite {
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+.origami .sheet.toprightfolding .clone-rotate {
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+.origami .sheet.bottomrightfolding .mask {
+  border-top: 1px solid transparent;
+  border-right: 1px solid white;
+}
+.origami .sheet.bottomrightfolding .clone-limite {
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+}
+.origami .sheet.bottomrightfolding .clone-rotate {
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+}
+.origami .sheet.bottomleftfolding .mask {
+  border-top: 1px solid transparent;
+  border-left: 1px solid white;
+}
+.origami .sheet.bottomleftfolding .clone-limite {
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+.origami .sheet.bottomleftfolding .clone-rotate {
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+.origami .sheet.leftfolding .mask {
+  border-left: 1px solid white;
+  height: 100%;
+}
+.origami .sheet.leftfolding .clone-limite {
+  top: 0;
+  left: 0;
+}
+.origami .sheet.leftfolding .clone-rotate {
+  top: 0;
+  left: 0;
+}
+.origami .sheet.rightfolding .mask {
+  border-right: 1px solid white;
+  height: 100%;
+  width: 50%;
+}
+.origami .sheet.rightfolding .clone-limite {
+  top: 0;
+  left: 0;
+  margin-left: 50%;
+}
+.origami .sheet.rightfolding .clone-rotate {
+  top: 0;
+  right: 0;
+}
+.origami .sheet.topfolding .mask {
+  height: 50%;
+  width: 100%;
+  background: white;
+}
+.origami .sheet.topfolding .clone-limite {
+  top: 0;
+  left: 0;
+  height: 50%;
+}
+.origami .sheet.topfolding .clone-rotate {
+  top: 0;
+  left: 0;
+}
+.origami .sheet.bottomfolding .mask {
+  height: 50%;
+  width: 100%;
+  background: white;
+  top: 50%;
+}
+.origami .sheet.bottomfolding .clone-limite {
+  bottom: 0;
+  left: 0;
+}
+.origami .sheet.bottomfolding .clone-rotate {
+  bottom: 0;
+  left: 0;
+}

@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.origami {
+  margin: auto;
+  overflow: hidden;
+  width:808px;
+  .sheet {
+    border: 1px solid white;
+    float: left;
+    height: 150px;
+    width:200px;
+    position: relative;
+    overflow: hidden;
+    img{
+      width:100%;
+      transition:all 0.5s;
+      /* opacity:0;*/
+    }
+    .mask {
+      border: 0;
+      height: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+    .clone{
+      background:black;
+      overflow:hidden;
+      position: absolute;
+      top: 0px;
+      transform-origin: 50% 50%;
+      transform-style: preserve-3d;
+      transition: all .4s ease-in-out;
+      img{
+        width: 100%;
+        opacity: 0.8;
+        transition: opacity 0.5s;
+      }
+    }
+    .clone-limite{
+      position: absolute;
+      overflow: hidden;
+    }
+    .clone-rotate{
+      position: absolute;
+    }
+    &.topfolding:hover, 
+    &.bottomfolding:hover, 
+    &.rightfolding:hover, 
+    &.leftfolding:hover,
+    &.toprightfolding:hover, 
+    &.topleftfolding:hover, 
+    &.bottomrightfolding:hover, 
+    &.bottomleftfolding:hover{
+      .clone {
+        transition: all .4s ease-in-out;
+        transform: rotate3d(0,0,0,0deg) !important;
+        img{
+          opacity:1;
+        }
+      }
+    }
+    /* topleftfolding */
+    &.topleftfolding {
+      .mask {
+        border-bottom: 1px solid transparent;
+        border-left: 1px solid white;
+      }
+      .clone-limite{
+        top: 0;
+        left: 0;
+        transform-origin: 0% 100%;
+      }
+      .clone-rotate{
+        top: 0;
+        left: 0;
+        transform-origin: 0% 100%;
+      }
+    }
+
+    /* toprightfolding */
+    &.toprightfolding {
+      .mask {
+        border-bottom: 1px solid transparent;
+        border-right: 1px solid white;
+      }
+      .clone-limite{
+        top: 0;
+        right: 0;
+        transform-origin: 100% 100%;
+      }
+      .clone-rotate{
+        top: 0;
+        right: 0;
+        transform-origin: 100% 100%;
+      }
+    }
+
+    /* bottomrightfolding */
+    &.bottomrightfolding {
+      .mask {
+        border-top: 1px solid transparent;
+        border-right: 1px solid white;
+      }
+      .clone-limite{
+        top: 0;
+        right: 0;
+        transform-origin: 100% 0%;
+      }
+      .clone-rotate{
+        top: 0;
+        right: 0;
+        transform-origin: 100% 0%;
+      }
+    }
+
+    /* bottomleftfolding */
+    &.bottomleftfolding {
+      .mask {
+        border-top: 1px solid transparent;
+        border-left: 1px solid white;
+      }
+      .clone-limite{
+        top: 0;
+        left: 0;
+        transform-origin: 0% 0%;
+      }
+      .clone-rotate{
+        top: 0;
+        left: 0;
+        transform-origin: 0% 0%;
+      }
+    }
+
+    /* leftfolding */
+    &.leftfolding {
+      .mask {
+        border-left: 1px solid white;
+        height: 100%;
+      }
+      .clone-limite{
+        top: 0;
+        left: 0;
+      }
+      .clone-rotate{
+        top: 0;
+        left: 0;
+      }
+    }
+
+    /* rightfolding */
+    &.rightfolding {
+      .mask {
+        border-right: 1px solid white;
+        height: 100%;
+        width: 50%;
+      }
+      .clone-limite{
+        top: 0;
+        left: 0;
+        margin-left:50%;
+      }
+      .clone-rotate{
+        top: 0;
+        right: 0;
+      }
+    }
+
+    /* topfolding */
+    &.topfolding {
+      .mask {
+        height: 50%;
+        width: 100%;
+        background: white;
+      }
+      .clone-limite{
+        top: 0;
+        left: 0;
+        height:50%;
+      }
+      .clone-rotate{
+        top: 0;
+        left: 0;
+      }
+    }
+
+    /* bottomfolding */
+    &.bottomfolding {
+      .mask {
+        height: 50%;
+        width: 100%;
+        background: white;
+        top: 50%;
+      }
+      .clone-limite{
+        bottom: 0;
+        left: 0;
+      }
+      .clone-rotate{
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+  }
+}
